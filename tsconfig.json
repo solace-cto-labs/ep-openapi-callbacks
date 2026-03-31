@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "nodenext",
+    "esModuleInterop": true,
+    "sourceMap": false,
+    "declaration": true,
+    "moduleResolution": "nodenext",
+    "strict": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/**", "node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "composite": true,
+    "paths": {
+      "converter": ["./converter/src/index.ts"],
+      "apiserver": ["./apiserver/src/index.ts"]
+    }
+  }
+}
