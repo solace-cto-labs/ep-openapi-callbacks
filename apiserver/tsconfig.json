@@ -1,0 +1,7 @@
+{
+  "compileOnSave": false,
+  "include": ["typings.d.ts", "server/**/*.ts", "src/**/*.ts", "tools/**/*.ts", "*.ts"],
+  "exclude": ["node_modules"],
+  "extends": "../tsconfig.json",
+  "references": [{"path": "../converter"}]
+}

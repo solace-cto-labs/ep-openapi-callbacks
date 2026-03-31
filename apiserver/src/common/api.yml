@@ -1,0 +1,417 @@
+openapi: 3.0.0
+info:
+  title: Order Status Event API
+  description: Order Status Event API
+  version: 0.1.0
+  x-ep-event-api-product-version-id: go98zb8d8mu
+  x-ep-event-api-id: efmcn1315jq
+  x-ep-event-api-product-version: 0.1.0
+  x-ep-state-name: RELEASED
+  x-ep-application-domain-id: su53g90t79k
+  x-ep-event-api-product-id: x5p969o684u
+  x-ep-event-api-version-id: kh0buugiyct
+  x-ep-application-domain-name: Order Management
+  x-ep-shared: 'true'
+  x-ep-event-api-version: 0.1.0
+  x-ep-event-api-product-name: "Order Tracking \vEvent API Product"
+  x-ep-displayname: 0.1.0
+  x-ep-state-id: '2'
+paths:
+  /retail/v1/orders/{orderId}/CUSTOMER_ACCEPTANCE_REQUIRED:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+    post:
+      summary: not available
+      operationId: retail/v1/orders/{orderId}/CUSTOMER_ACCEPTANCE_REQUIRED-Receive
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscribeRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscribeSuccessResponse'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      callbacks:
+        OrderCustomerAcceptanceRequired:
+          '{$request.body#/callbackUrl}':
+            post:
+              summary: not available
+              operationId: retail/v1/orders/{orderId}/CUSTOMER_ACCEPTANCE_REQUIRED
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/Order_Event_Schema'
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                '500':
+                  description: Error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+              x-ep-event-id: krzwadaorif
+              x-ep-event-version-displayname: 0.1.0
+              x-ep-application-domain-id: su53g90t79k
+              x-ep-event-state-name: RELEASED
+              x-ep-shared: 'true'
+              x-ep-application-domain-name: Order Management
+              x-ep-event-version-id: zdyjmog11gf
+              x-ep-event-version: 0.1.0
+              x-ep-event-name: OrderCustomerAcceptanceRequired
+              x-ep-event-state-id: '2'
+              x-parser-message-name: OrderCustomerAcceptanceRequired
+    delete:
+      summary: not available
+      operationId: retail/v1/orders/{orderId}/CUSTOMER_ACCEPTANCE_REQUIRED-Delete
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnSubscribeSuccessResponse'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      parameters:
+        - in: query
+          name: callbackId
+          required: true
+          description: >-
+            The callbackId as contained in the response when the callback was
+            created
+          schema:
+            type: string
+  /retail/v1/orders/{orderId}/CUSTOMER_REVIEW_REQUIRED:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+    post:
+      summary: not available
+      operationId: retail/v1/orders/{orderId}/CUSTOMER_REVIEW_REQUIRED-Receive
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscribeRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscribeSuccessResponse'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      callbacks:
+        OrderCustomerReviewRequired:
+          '{$request.body#/callbackUrl}':
+            post:
+              summary: not available
+              operationId: retail/v1/orders/{orderId}/CUSTOMER_REVIEW_REQUIRED
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/Order_Event_Schema'
+              responses:
+                '200':
+                  description: Success
+                '400':
+                  description: Error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                '500':
+                  description: Error
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+              x-ep-event-id: qm3aw9bxpc8
+              x-ep-event-version-displayname: ''
+              x-ep-application-domain-id: su53g90t79k
+              x-ep-event-state-name: RELEASED
+              x-ep-shared: 'true'
+              x-ep-application-domain-name: Order Management
+              x-ep-event-version-id: ektktnelzv3
+              x-ep-event-version: 0.1.0
+              x-ep-event-name: OrderCustomerReviewRequired
+              x-ep-event-state-id: '2'
+              x-parser-message-name: OrderCustomerReviewRequired
+    delete:
+      summary: not available
+      operationId: retail/v1/orders/{orderId}/CUSTOMER_REVIEW_REQUIRED-Delete
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnSubscribeSuccessResponse'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      parameters:
+        - in: query
+          name: callbackId
+          required: true
+          description: >-
+            The callbackId as contained in the response when the callback was
+            created
+          schema:
+            type: string
+components:
+  schemas:
+    SubscribeRequest:
+      type: object
+      properties:
+        callbackUrl:
+          type: string
+        authenticationType:
+          type: string
+          enum:
+            - none
+            - http-basic
+            - http-header
+            - oauth-client
+        authenticationHttpBasicPassword:
+          type: string
+        authenticationHttpBasicUsername:
+          type: string
+        authenticationHttpHeaderName:
+          type: string
+        authenticationHttpHeaderValue:
+          type: string
+        authenticationOauthClientTokenEndpoint:
+          type: string
+        authenticationOauthClientId:
+          type: string
+        authenticationOauthClientSecret:
+          type: string
+        authenticationOauthClientScope:
+          type: array
+          items:
+            type: string
+      required:
+        - callbackUrl
+        - authenticationType
+      additionalProperties: false
+    SubscribeSuccessResponse:
+      type: object
+      properties:
+        subscriptionTopic:
+          type: string
+        callbackId:
+          type: string
+      required:
+        - subscriptionTopic
+        - callbackId
+      additionalProperties: false
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        errorId:
+          type: string
+      required:
+        - message
+        - errorId
+      additionalProperties: false
+    UnSubscribeSuccessResponse:
+      type: object
+      properties:
+        subscriptionTopic:
+          type: string
+      required:
+        - subscriptionTopic
+      additionalProperties: false
+    Order_Event_Schema:
+      description: Order that must be picked in a retail store for a customer
+      title: Order
+      type: object
+      required:
+        - createdAt
+        - customerId
+        - customerName
+        - id
+        - metaInfo
+        - selectedItems
+        - storeId
+        - storeName
+        - version
+      properties:
+        createdAt:
+          format: date-time
+          description: Timestamp this order was created..
+          type: string
+          x-parser-schema-id: <anonymous-schema-1>
+        customerId:
+          minLength: 0
+          pattern: '[a-zA-Z0-9]+'
+          description: Id of the customer
+          type: string
+          maxLength: 255
+          required:
+            - 'true'
+          example: abc123
+          x-parser-schema-id: <anonymous-schema-2>
+        storeName:
+          minLength: 0
+          pattern: '[a-zA-Z0-9\- ]+'
+          description: Name of the store
+          type: string
+          maxLength: 255
+          required:
+            - 'true'
+          example: abc123
+          x-parser-schema-id: <anonymous-schema-3>
+        id:
+          minLength: 0
+          pattern: '[a-zA-Z0-9]+'
+          description: Id of the object
+          type: string
+          maxLength: 255
+          required:
+            - 'true'
+          example: abc123
+          x-parser-schema-id: <anonymous-schema-4>
+        storeId:
+          minLength: 0
+          pattern: '[a-zA-Z0-9]+'
+          description: Id of the store
+          type: string
+          maxLength: 255
+          required:
+            - 'true'
+          example: abc123
+          x-parser-schema-id: <anonymous-schema-5>
+        version:
+          format: int64
+          maximum: 999999999
+          description: Version number that is incremented with each change of
+          type: integer
+          minimum: 1
+          required:
+            - 'true'
+          example: 1
+          x-parser-schema-id: <anonymous-schema-6>
+        customerName:
+          minLength: 0
+          pattern: '[a-zA-Z0-9\- ]+'
+          description: Name of the customer
+          type: string
+          maxLength: 255
+          required:
+            - 'true'
+          example: abc123
+          x-parser-schema-id: <anonymous-schema-7>
+        selectedItems:
+          type: array
+          items:
+            type: object
+            properties:
+              quantity:
+                format: int64
+                maximum: 999999999
+                type: integer
+                minimum: 0
+                x-parser-schema-id: <anonymous-schema-10>
+              id:
+                minLength: 1
+                type: string
+                maxLength: 255
+                x-parser-schema-id: <anonymous-schema-11>
+              productName:
+                minLength: 1
+                type: string
+                maxLength: 255
+                x-parser-schema-id: <anonymous-schema-12>
+            required:
+              - id
+              - productName
+              - quantity
+            x-parser-schema-id: <anonymous-schema-9>
+          x-parser-schema-id: <anonymous-schema-8>
+        status:
+          type: string
+          enum:
+            - ORDER_RECEIVED
+            - ORDER_ACCEPTED
+            - CUSTOMER_REVIEW_REQUIRED
+            - IN_PROGRESS
+            - CUSTOMER_ACCEPTANCE_REQUIRED
+            - COMPLETED
+            - CANCELED
+            - SHIPPED
+          x-parser-schema-id: <anonymous-schema-13>
+      x-parser-schema-id: Order_Event_Schema
+servers: []
+security: []
